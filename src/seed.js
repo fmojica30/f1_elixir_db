@@ -8,5 +8,4 @@ const connectionString = process.env.DATABASE_URL || "";
 const connection = mysql.createConnection(connectionString);
 connection.connect();
 
-
 loadDriverInfo(connection);

@@ -1,7 +1,7 @@
 import cheerio from "cheerio";
 import puppeteer from "puppeteer";
 
-export const getDriverInfo = async () => {
+export async function getDriverInfo() {
   const baseUrl = "https://www.statsf1.com/en/pilotes-";
   const browser = await puppeteer.launch();
   let driver_out = [];
@@ -139,10 +139,9 @@ export const getDriverInfo = async () => {
 };
 
 
-export const loadDriverInfo = async (connection) => {
+export async function loadDriverInfo(connection) {
   const driverInfo = await getDriverInfo();
-  const sql =
-    "INSERT INTO driver (first_name, last_name, nation, start_year, winner, active, world_champion) VALUES ?";
+  const sql = "INSERT INTO driver (first_name, last_name, nation, start_year, winner, active, world_champion) VALUES ?";
   const values = driverInfo.map((driver) => [
     driver.first_name,
     driver.last_name,
@@ -160,4 +159,4 @@ export const loadDriverInfo = async (connection) => {
       console.log("Dice");
     }
   });
-};
+}

@@ -5,8 +5,8 @@
   "main": "seed.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "seed:db": "node ./src/seed.js"
+    "seed:db": "node ./src/seed.js",
+    "init": "npm install"
   },
   "repository": {
     "type": "git",
