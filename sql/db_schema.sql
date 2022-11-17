@@ -14,7 +14,7 @@ CREATE TABLE `constructor` (
   `name` varchar(1000),
   `active` boolean,
   `nation` varchar(1000),
-  `start_year` date,
+  `start_year` year,
   `winner` boolean,
   `world_champion` boolean
 );
