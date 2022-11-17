@@ -47,8 +47,8 @@ export async function getDriverInfo() {
         .text()
         .toLowerCase()
         .split(" ");
-      driver.first_name = name_array[0];
-      driver.last_name = name_array[1];
+      driver.first_name = name_array[1];
+      driver.last_name = name_array[0];
 
       // Setting Q driver active flag
       $("#ctl00_CPH_Main_GV_Pilote > tbody > tr > td:nth-child(1) > a")
@@ -104,8 +104,8 @@ export async function getDriverInfo() {
             if (i === 0) {
               //Getting name and active flag from first columns
               let name_array = $(el).text().toLowerCase().split(" ");
-              driver.first_name = name_array[0];
-              driver.last_name = name_array[1];
+              driver.first_name = name_array[1];
+              driver.last_name = name_array[0];
               $(el).find("a").find("span").attr("class") === "CurDriver"
                 ? (driver.active = true)
                 : (driver.active = false);
