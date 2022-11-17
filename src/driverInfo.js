@@ -1,7 +1,7 @@
 import cheerio from "cheerio";
 import puppeteer from "puppeteer";
 
-export async function getDriverInfo() {
+async function getDriverInfo() {
   const baseUrl = "https://www.statsf1.com/en/pilotes-";
   const browser = await puppeteer.launch();
   let driver_out = [];
