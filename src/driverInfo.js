@@ -106,6 +106,7 @@ export async function getDriverInfo() {
               let name_array = $(el).text().trim().toLowerCase().split(" ");
               if (name_array.length = 1) {
                 driver.first_name = name_array.pop();
+                driver.last_name = '';
               } else if (name_array.length > 2) {
                 console.log('');
                 console.log(name_array);
