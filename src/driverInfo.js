@@ -103,9 +103,20 @@ export async function getDriverInfo() {
           .each((i, el) => {
             if (i === 0) {
               //Getting name and active flag from first columns
-              let name_array = $(el).text().toLowerCase().split(" ");
-              driver.first_name = name_array[1];
-              driver.last_name = name_array[0];
+              let name_array = $(el).text().trim().toLowerCase().split(" ");
+              if (name_array.length = 1) {
+                driver.first_name = name_array.pop();
+              } else if (name_array.length > 2) {
+                console.log('');
+                console.log(name_array);
+                driver.first_name = name_array.pop();
+                console.log(driver.first_name);
+                driver.last_name = name_array.join(' ');
+                console.log(driver.last_name);
+              } else {
+                driver.first_name = name_array[1];
+                driver.last_name = name_array[0];
+              }
               $(el).find("a").find("span").attr("class") === "CurDriver"
                 ? (driver.active = true)
                 : (driver.active = false);
