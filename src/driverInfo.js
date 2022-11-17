@@ -113,7 +113,6 @@ export async function getDriverInfo() {
                 for (let i = 0; i < name_process_array.length; i++) {
                   if (name_process_array[i].toUpperCase() === name_process_array[i]) {
                     last_name_process = i;
-                    console.log(i)
                   }
                 }
                 driver.last_name = name_array.slice(0,last_name_process + 1).join(' ');
