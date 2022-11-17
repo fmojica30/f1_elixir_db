@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "seed:db": "node ./src/seed.js",
-    "init": "npm install"
+    "init": "npm install",
+    "dev:seed": "pscale connect f1api dev --execute 'node ./src/seed.js'"
   },
   "repository": {
     "type": "git",
