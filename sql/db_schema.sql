@@ -20,6 +20,7 @@ CREATE TABLE `constructor` (
 );
 
 CREATE TABLE `constructor_driver_pairings` (
+  `id` integer PRIMARY KEY AUTO_INCREMENT,
   `driver` integer,
   `constructor` integer,
   `fastest_lap` integer,
@@ -48,6 +49,7 @@ CREATE TABLE `grand_prix` (
 );
 
 CREATE TABLE `grand_prix_driver_pairings` (
+  `id` integer PRIMARY KEY AUTO_INCREMENT,
   `driver` integer,
   `constructor` integer,
   `engine` integer,
@@ -60,6 +62,7 @@ CREATE TABLE `grand_prix_driver_pairings` (
 );
 
 CREATE TABLE `driver_season_stats` (
+  `id` integer PRIMARY KEY AUTO_INCREMENT,
   `driver` integer,
   `constructor` integer,
   `engine` integer,
