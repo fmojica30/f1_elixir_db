@@ -41,8 +41,9 @@ CREATE TABLE `engine` (
 CREATE TABLE `grand_prix` (
   `id` integer PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(1000),
-  `country` varchar(1000),
-  `start_year` year
+  `number` integer,
+  `start_year` year,
+  `last_year` year 
 );
 
 CREATE TABLE `grand_prix_driver_pairings` (
