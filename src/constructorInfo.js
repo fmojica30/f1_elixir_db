@@ -63,7 +63,6 @@ async function getConstructorInfo() {
     });
     page.close();
   }
-  console.log(constructor_out);
   return constructor_out;
 }
 
@@ -80,10 +79,10 @@ export async function loadConstructorInfo(connection) {
   ]);
   connection.query(sql, [values], (err) => {
     if (err) {
-      console.error("No dice");
+      console.error("Load Constructor Info: Data not loaded");
       console.log(err);
     } else {
-      console.log("Dice");
+      console.error("Load Constructor Info: Data loaded");
     }
   });
 }

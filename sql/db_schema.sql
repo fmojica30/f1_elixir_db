@@ -32,6 +32,7 @@ CREATE TABLE `constructor_driver_pairings` (
 CREATE TABLE `engine` (
   `id` integer PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(1000),
+  `active` boolean,
   `nation` varchar(1000),
   `start_year` year,
   `winner` boolean,

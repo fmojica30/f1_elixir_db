@@ -32,7 +32,6 @@ async function getGrandPrixInfo() {
       });
     gp_out.push(gp);
   });
-  console.log(gp_out);
   page.close();
   return gp_out;
 }
@@ -49,10 +48,10 @@ export async function loadGrandPrixInfo(connection) {
   ]);
   connection.query(sql, [values], (err) => {
     if (err) {
-      console.error("No dice");
+      console.error("Load Grand Prix Info: Data not loaded");
       console.log(err);
     } else {
-      console.log("Dice");
+      console.error("Load Grand Prix Info: Data loaded");
     }
   });
 }

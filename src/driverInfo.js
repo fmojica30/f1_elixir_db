@@ -15,15 +15,6 @@ async function getDriverInfo() {
     const page = await browser.newPage();
     await page.goto(baseUrl + chr + ".aspx");
 
-    var driver = {
-      first_name: "",
-      last_name: "",
-      nation: "",
-      start: "",
-      winner: false,
-      wc: false,
-      active: false,
-    };
     await page.waitForSelector("#content > div.SimpleBar");
     const data = await page.evaluate(
       () => document.querySelector("*").outerHTML
@@ -168,10 +159,10 @@ export async function loadDriverInfo(connection) {
   ]);
   connection.query(sql, [values], (err) => {
     if (err) {
-      console.error("No dice");
+      console.error("Load Driver Info: Data not loaded");
       console.log(err);
     } else {
-      console.log("Dice");
+      console.error("Load Driver Info: Data loaded");
     }
   });
 }
