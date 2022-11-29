@@ -48,10 +48,10 @@ export async function loadGrandPrixInfo(connection) {
   ]);
   connection.query(sql, [values], (err) => {
     if (err) {
-      console.error("Load Grand Prix Info: Data not loaded");
+      console.log("Load Grand Prix Info: Data not loaded");
       console.log(err);
     } else {
-      console.error("Load Grand Prix Info: Data loaded");
+      console.log("Load Grand Prix Info: Data loaded");
     }
   });
 }

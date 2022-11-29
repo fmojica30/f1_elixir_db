@@ -159,10 +159,10 @@ export async function loadDriverInfo(connection) {
   ]);
   connection.query(sql, [values], (err) => {
     if (err) {
-      console.error("Load Driver Info: Data not loaded");
+      console.log("Load Driver Info: Data not loaded");
       console.log(err);
     } else {
-      console.error("Load Driver Info: Data loaded");
+      console.log("Load Driver Info: Data loaded");
     }
   });
 }

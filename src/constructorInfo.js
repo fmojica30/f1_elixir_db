@@ -79,10 +79,10 @@ export async function loadConstructorInfo(connection) {
   ]);
   connection.query(sql, [values], (err) => {
     if (err) {
-      console.error("Load Constructor Info: Data not loaded");
+      console.log("Load Constructor Info: Data not loaded");
       console.log(err);
     } else {
-      console.error("Load Constructor Info: Data loaded");
+      console.log("Load Constructor Info: Data loaded");
     }
   });
 }

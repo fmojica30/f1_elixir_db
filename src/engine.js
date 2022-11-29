@@ -73,10 +73,10 @@ export async function loadEngineInfo(connection) {
   ]);
   connection.query(sql, [values], (err) => {
     if (err) {
-      console.error("Load Engine Info: Data not loaded");
+      console.log("Load Engine Info: Data not loaded");
       console.log(err);
     } else {
-      console.error("Load Engine Info: Data loaded");
+      console.log("Load Engine Info: Data loaded");
     }
   });
 }
