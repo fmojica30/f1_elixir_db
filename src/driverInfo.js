@@ -141,6 +141,7 @@ async function getDriverInfo() {
     }
     page.close();
   }
+  browser.close();
   return driver_out;
 };
 

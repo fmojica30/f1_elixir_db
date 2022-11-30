@@ -63,6 +63,7 @@ async function getConstructorInfo() {
     });
     page.close();
   }
+  browser.close();
   return constructor_out;
 }
 

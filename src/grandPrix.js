@@ -33,6 +33,7 @@ async function getGrandPrixInfo() {
     gp_out.push(gp);
   });
   page.close();
+  browser.close();
   return gp_out;
 }
 

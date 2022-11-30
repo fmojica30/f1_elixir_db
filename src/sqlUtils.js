@@ -36,6 +36,15 @@ export async function resetDB(connection) {
     }
   });
 
+  connection.query("delete from constructor_driver_pairings;", (err) => {
+    if (err) {
+      console.log(err);
+      console.log("Reset DB: constructor_driver_pairings table data not deleted");
+    } else {
+      console.log("Reset DB: constructor_driver_pairings table data deleted");
+    }
+  });
+
   // Reseting id count
   connection.query("ALTER TABLE driver AUTO_INCREMENT = 1;", (err) => {
     if (err) {
@@ -71,5 +80,25 @@ export async function resetDB(connection) {
     } else {
       console.log("Reset DB: grand_prix table auto increment reset");
     }
+  });
+
+  connection.query("ALTER TABLE constructor_driver_pairings AUTO_INCREMENT = 1", (err) => {
+    if (err) {
+      console.log(err);
+      console.log("Reset DB: constructor_driver_pairings table auto increment not reset");
+    } else {
+      console.log("Reset DB: constructor_driver_pairings table auto increment reset");
+    }
+  });
+}
+
+export function getDriverNames(connection) {
+  return new Promise((resolve, reject) => {
+    connection.query(
+      "select first_name, last_name from driver;",
+      (err, result) => {
+        return err ? reject(err) : resolve(result);
+      }
+    );
   });
 }

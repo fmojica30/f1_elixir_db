@@ -57,6 +57,7 @@ async function getEngineInfo() {
     })
     page.close
   }
+  browser.close();
   return engine_out;
 }
 
